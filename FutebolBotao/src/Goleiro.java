@@ -8,5 +8,12 @@ public class Goleiro extends Jogador {
 	
 	// Métodos
 	
+	@Override
+	public void passeBola(Jogador companheiro){
+		if (bola && companheiro instanceof Zagueiro){
+			companheiro.bola = true;
+			this.bola = false;
+		}
+	}
 
 }

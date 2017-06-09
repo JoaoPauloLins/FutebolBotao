@@ -23,6 +23,5 @@ public class Meia extends Jogador {
 			this.bola = true;
 			adversario.bola = false;
 		}
-	}
-	
+	}	
 }
