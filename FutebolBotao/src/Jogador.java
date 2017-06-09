@@ -3,7 +3,7 @@ public class Jogador {
 
 	public String nome;
 	public int numeroCamisa;
-	public boolean bola;
+	public boolean bola; // Se for true, o jogador possue a bola. Se for false, o jogador não possue a bola.
 	public String time;
 
 	//Construtor	
