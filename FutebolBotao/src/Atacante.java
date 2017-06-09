@@ -8,8 +8,18 @@ public class Atacante extends Jogador {
 	
 	//Métodos
 	
-	public void chutarGol(Gol gol){
-		gol.gol(time);
+	public void chutarGol(Gol gol, Bola bola){
+		if (bola.chao){
+			gol.gol(time);
+		}
+	}
+	
+	@Override 
+	public void passeBola(Jogador companheiro){
+		if (bola && companheiro instanceof Atacante){
+			companheiro.bola = true;
+			this.bola = false;
+		}
 	}
 
 }
