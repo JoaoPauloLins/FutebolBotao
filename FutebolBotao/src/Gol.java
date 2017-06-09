@@ -1,8 +1,8 @@
 
 public class Gol {
 	
-	public int pontuacaoA;
-	public int pontuacaoB;
+	private int pontuacaoA;
+	private int pontuacaoB;
 	public String placar;
 
 	

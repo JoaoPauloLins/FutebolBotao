@@ -8,14 +8,8 @@ public class Atacante extends Jogador {
 	
 	//Métodos
 	
-	public void chutarGol(){
-		Gol gol = new Gol();
-		if (this.time.equals("A")){
-			gol.pontuacaoA++;
-		}
-		else if (this.time.equals("B")){
-			gol.pontuacaoB++;
-		}
+	public void chutarGol(Gol gol){
+		gol.gol(time);
 	}
 
 }

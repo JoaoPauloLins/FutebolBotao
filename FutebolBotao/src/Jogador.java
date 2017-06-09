@@ -12,7 +12,7 @@ public class Jogador {
 		this.numeroCamisa = numeroCamisa;
 		this.time = time;
 	}
-	
+
 	//Get e Set
 	public String getNome() {
 		return nome;
