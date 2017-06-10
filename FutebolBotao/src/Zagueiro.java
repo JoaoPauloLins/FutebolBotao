@@ -17,8 +17,14 @@ public class Zagueiro extends Jogador implements IJogadas{
 	@Override
 	public void roubarBola(Jogador adversario) {
 		if (!posseBola && adversario instanceof Atacante && Math.random() < 0.6){
-			this.posseBola = true;
-			adversario.posseBola = false;
+			double n = Math.random();
+			if(n < 0.3){
+				this.posseBola = true;
+				adversario.posseBola = false;
+			}
+			else if(n > 0.3){
+				//FALTA
+			}
 		}
 		
 	}	

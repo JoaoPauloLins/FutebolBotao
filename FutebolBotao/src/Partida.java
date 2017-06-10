@@ -37,7 +37,7 @@ public class Partida {
 	    Atacante atacanteEB = new Atacante("Neymar", 11);
 	    Atacante atacanteDB = new Atacante("Gabriel Jesus",9);
 	    
-	    Time brasil = new Time("Sport",goleiroB,zagueiroEB,zagueiroDB,lateralEB,lateralDB,volanteEB,volanteDB,meiaEB,meiaDB,atacanteEB,atacanteDB);
+	    Time brasil = new Time("Brasil",goleiroB,zagueiroEB,zagueiroDB,lateralEB,lateralDB,volanteEB,volanteDB,meiaEB,meiaDB,atacanteEB,atacanteDB);
 	    brasil.pontuacao = 0;
 	    
 	    Gol gol = new Gol(sport,brasil);

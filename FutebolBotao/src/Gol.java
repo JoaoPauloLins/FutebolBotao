@@ -43,7 +43,7 @@ public class Gol {
 	}
 	
 	public String placar(){
-		this.placar = "time A "+this.timeA.pontuacao+"x"+this.timeB.pontuacao+" time B";
+		this.placar = timeA.nome+" "+this.timeA.pontuacao+"x"+this.timeB.pontuacao+" "+timeB.nome;
 		return placar;
 	}
 
