@@ -1,7 +1,7 @@
 
 public class Lateral extends Jogador implements IJogadas{
-	public Lateral(String nome, int numeroCamisa, String time){
-		super(nome, numeroCamisa, time);
+	public Lateral(String nome, int numeroCamisa){
+		super(nome, numeroCamisa);
 	}
 
 	@Override

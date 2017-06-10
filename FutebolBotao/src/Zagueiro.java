@@ -1,8 +1,8 @@
 
 public class Zagueiro extends Jogador implements IJogadas{
 	
-	public Zagueiro (String nome, int numeroCamisa, String time){
-		super(nome, numeroCamisa, time);
+	public Zagueiro (String nome, int numeroCamisa){
+		super(nome, numeroCamisa);
 	}
 
 	@Override

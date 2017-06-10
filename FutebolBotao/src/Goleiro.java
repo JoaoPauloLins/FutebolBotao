@@ -1,8 +1,8 @@
 
 public class Goleiro extends Jogador implements IJogadas{
 
-	public Goleiro(String nome, int numeroCamisa, String time) {
-		super(nome, numeroCamisa, time);
+	public Goleiro(String nome, int numeroCamisa) {
+		super(nome, numeroCamisa);
 		// TODO Auto-generated constructor stub
 	}
 

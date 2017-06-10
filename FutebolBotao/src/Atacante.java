@@ -1,14 +1,15 @@
 
-public class Atacante extends Jogador implements IJogadas{
+public class Atacante extends Jogador implements IJogadas,IFinalizacao{
 
-	public Atacante(String nome, int numeroCamisa, String time) {
-		super(nome, numeroCamisa, time);
+	public Atacante(String nome, int numeroCamisa) {
+		super(nome, numeroCamisa);
 		// TODO Auto-generated constructor stub
 	}
 	
 	//Métodos
 	
-	public void chutarGol(Gol gol){
+	@Override
+	public void chutarGol(Gol gol,String time){
 		gol.gol(time);
 	}
 

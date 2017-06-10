@@ -1,7 +1,7 @@
 
 public class Volante extends Jogador implements IJogadas{
-	public Volante(String nome, int numeroCamisa, String time){
-		super(nome, numeroCamisa, time);
+	public Volante(String nome, int numeroCamisa){
+		super(nome, numeroCamisa);
 	}
 	
 	@Override

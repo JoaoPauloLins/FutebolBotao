@@ -16,6 +16,8 @@ public class Time {
 	public Atacante atacanteE;
 	public Atacante atacanteC;
 	public Atacante atacanteD;
+	
+	public int pontuacao;
 
 	//Construtor
 	// Esquema 4-4-2

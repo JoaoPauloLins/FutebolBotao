@@ -1,12 +1,13 @@
 
-public class Meia extends Jogador implements IJogadas{
+public class Meia extends Jogador implements IJogadas,IFinalizacao{
 
-	public Meia (String nome, int numeroCamisa, String time){
-		super(nome, numeroCamisa, time);
+	public Meia (String nome, int numeroCamisa){
+		super(nome, numeroCamisa);
 	}
 	
-	public void chutarGol (Gol OitentaE7ehNosso){
-		OitentaE7ehNosso.gol(time);
+	@Override
+	public void chutarGol (Gol gol,String time){
+		gol.gol(time);
 	}
 
 	@Override
