@@ -11,7 +11,7 @@ public class Meia extends Jogador implements IJogadas{
 
 	@Override
 	public void passeBola(Jogador companheiro) {
-		if (posseBola && companheiro instanceof Meia || companheiro instanceof Lateral || companheiro instanceof Atacante){
+		if (posseBola && (companheiro instanceof Meia || companheiro instanceof Lateral || companheiro instanceof Atacante)){
 			companheiro.posseBola = true;
 			this.posseBola = false;
 		}

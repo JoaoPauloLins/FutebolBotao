@@ -39,22 +39,5 @@ public class Jogador {
 		this.time = time;
 	}
 
-	//Métodos
-	
-	/*
-	public void passeBola(Jogador companheiro){
-		if (posseBola){
-			companheiro.posseBola = true;
-			this.posseBola = false;
-		}
-	}
-	
-	public void roubarBola(Jogador adversario){
-		if (!posseBola){
-			this.posseBola = true;
-			adversario.posseBola = false;
-		}
-	}
-	*/
 }
                                                                                                                                                                                                                              
