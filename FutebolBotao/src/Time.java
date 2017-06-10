@@ -2,10 +2,10 @@
 public class Time {
 	
 	public String nome;
+	public String esquema;
 
 	public Goleiro goleiro;
 	public Zagueiro zagueiroE;
-	public Zagueiro zagueiroC;
 	public Zagueiro zagueiroD;
 	public Lateral lateralE;
 	public Lateral lateralD;
@@ -14,7 +14,6 @@ public class Time {
 	public Meia meiaE;
 	public Meia meiaD;
 	public Atacante atacanteE;
-	public Atacante atacanteC;
 	public Atacante atacanteD;
 	
 	public int pontuacao;
@@ -46,6 +45,7 @@ public class Time {
 			this.meiaD = meiaD;
 			this.atacanteE = atacanteE;
 			this.atacanteD = atacanteD;
+			this.esquema = "4-4-2";
 			
 	}
 	
@@ -57,4 +57,6 @@ public class Time {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
+	
+	
 }

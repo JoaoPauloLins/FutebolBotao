@@ -1,7 +1,7 @@
 
 public interface IJogadas {
 	
-	public void passeBola(Jogador companheiro);
-	public void roubarBola(Jogador adversario);
+	public void passeBola(Jogador companheiro, int numero);
+	public void roubarBola(Jogador adversario, int numero);
 
 }

@@ -1,8 +1,8 @@
 
 public class Atacante extends Jogador implements IJogadas,IFinalizacao{
 
-	public Atacante(String nome, int numeroCamisa) {
-		super(nome, numeroCamisa);
+	public Atacante(String nome, int numeroCamisa, String time) {
+		super(nome, numeroCamisa,time);
 		// TODO Auto-generated constructor stub
 	}
 	
@@ -14,19 +14,22 @@ public class Atacante extends Jogador implements IJogadas,IFinalizacao{
 	}
 
 	@Override
-	public void passeBola(Jogador companheiro) {
-		if (posseBola && companheiro instanceof Atacante){
-			companheiro.posseBola = true;
-			this.posseBola = false;
+	public void passeBola(Jogador companheiro, int numero) {
+		if (posseBola && companheiro.getNumeroCamisa() == numero){
+			if(companheiro instanceof Atacante){
+				companheiro.posseBola = true;
+				this.posseBola = false;
+			}
 		}
-		
 	}
 
 	@Override
-	public void roubarBola(Jogador adversario) {
-		if (!posseBola && (adversario instanceof Zagueiro)){
-			this.posseBola = true;
-			adversario.posseBola = false;
+	public void roubarBola(Jogador adversario, int numero) {
+		if (!posseBola && adversario.getNumeroCamisa() == numero){
+			if (adversario instanceof Zagueiro){
+				this.posseBola = true;
+				adversario.posseBola = false;
+			}			
 		}		
 	}
 
