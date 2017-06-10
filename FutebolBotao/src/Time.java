@@ -2,7 +2,7 @@
 public class Time {
 	
 	public String nome;
-	
+
 	public Goleiro goleiro;
 	public Zagueiro zagueiroE;
 	public Zagueiro zagueiroC;
@@ -47,5 +47,14 @@ public class Time {
 			this.atacanteE = atacanteE;
 			this.atacanteD = atacanteD;
 			
+	}
+	
+	// Get e Set
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 }

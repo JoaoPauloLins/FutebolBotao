@@ -42,8 +42,17 @@ public class Partida {
 	    
 	    Gol gol = new Gol(sport,brasil);
 	
-	    System.out.printf("Começa o jogo!\n");
+	    System.out.println("Começa o jogo!");
+	    if (Math.random() < 0.5){
+	    	sport.goleiro.posseBola = true;
+	    	System.out.printf("O %s começa com a posse de bola!",sport.getNome());
+	    }
+	    else{
+	    	brasil.goleiro.posseBola = true;
+	    	System.out.printf("O %s começa com a posse de bola!",brasil.getNome());
+	    }
 	    //Primeiro Tempo
+	    /*
 	    while(tempo < 45){
 	    	
 	    }
@@ -51,6 +60,7 @@ public class Partida {
 	    while(tempo < 90){
 	    	
 	    }
+	    */
 	    System.out.printf("O goleiro %s está com a bola!\n",sport.goleiro.getNome());
 	    sport.goleiro.posseBola = true;
 	    System.out.printf("%s vai tocar a bola para: digite 1 para %s, ou 2 para %s \n", sport.goleiro.getNome(), sport.zagueiroD.getNome(), sport.zagueiroE.getNome());
