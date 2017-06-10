@@ -8,7 +8,6 @@ public class Partida {
 	    String m;
 
 	    Gol placar = new Gol();
-	    Bola bola = new Bola();
 	    Jogador goleiro = new Jogador("Magrão",1,"A");
 	    Jogador zagueiroD = new Jogador("Ronaldo Alves",2,"A");
 	    Jogador zagueiroE = new Jogador("Durval",4,"A");
@@ -26,7 +25,7 @@ public class Partida {
 	    	System.out.printf("%s tocou para %s \n", goleiro.getNome(), zagueiroE.getNome());
 	    }
 	    
-	    atacanteC.chutarGol(placar,bola);
+	    atacanteC.chutarGol(placar);
 	    m = placar.placar();
 	    
 	    System.out.printf(m);

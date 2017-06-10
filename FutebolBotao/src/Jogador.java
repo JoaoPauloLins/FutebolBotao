@@ -3,7 +3,7 @@ public class Jogador {
 
 	public String nome;
 	public int numeroCamisa;
-	public boolean bola; // Se for true, o jogador possue a bola. Se for false, o jogador não possue a bola.
+	public boolean posseBola; // Se for true, o jogador possue a bola. Se for false, o jogador não possue a bola.
 	public String time;
 
 	//Construtor	
@@ -27,10 +27,10 @@ public class Jogador {
 		this.numeroCamisa = numeroCamisa;
 	}
 	public boolean isBola() {
-		return bola;
+		return posseBola;
 	}
 	public void setBola(boolean bola) {
-		this.bola = bola;
+		this.posseBola = bola;
 	}
 	public String getTime() {
 		return time;
@@ -41,18 +41,20 @@ public class Jogador {
 
 	//Métodos
 	
+	/*
 	public void passeBola(Jogador companheiro){
-		if (bola){
-			companheiro.bola = true;
-			this.bola = false;
+		if (posseBola){
+			companheiro.posseBola = true;
+			this.posseBola = false;
 		}
 	}
 	
 	public void roubarBola(Jogador adversario){
-		if (!bola){
-			this.bola = true;
-			adversario.bola = false;
+		if (!posseBola){
+			this.posseBola = true;
+			adversario.posseBola = false;
 		}
 	}
+	*/
 }
                                                                                                                                                                                                                              

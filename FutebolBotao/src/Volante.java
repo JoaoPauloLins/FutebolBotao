@@ -1,28 +1,22 @@
 
-public class Volante extends Jogador{
+public class Volante extends Jogador implements IJogadas{
 	public Volante(String nome, int numeroCamisa, String time){
 		super(nome, numeroCamisa, time);
 	}
 	
+	@Override
 	public void passeBola(Jogador companheiro){
-		if (bola && (companheiro instanceof Volante || companheiro instanceof Meia)){
-			companheiro.bola = true;
-			this.bola = false;
+		if (posseBola && (companheiro instanceof Volante || companheiro instanceof Meia || companheiro instanceof Atacante)){
+			companheiro.posseBola = true;
+			this.posseBola = false;
 		}
 	}
 	
-	public void enfiarBola(Jogador companheiro){
-		if (bola&& (companheiro instanceof Atacante)){
-			companheiro.bola = true;
-			this.bola = false;
-		}
-	}
-	
+	@Override
 	public void roubarBola(Jogador adversario){
-		if (!bola && (adversario instanceof Meia )){
-			this.bola = true;
-			adversario.bola = false;
+		if (!posseBola && (adversario instanceof Meia )){
+			this.posseBola = true;
+			adversario.posseBola = false;
 		}
 	}
-
 }

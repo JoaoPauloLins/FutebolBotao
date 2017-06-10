@@ -1,5 +1,5 @@
 
-public class Atacante extends Jogador {
+public class Atacante extends Jogador implements IJogadas{
 
 	public Atacante(String nome, int numeroCamisa, String time) {
 		super(nome, numeroCamisa, time);
@@ -8,18 +8,25 @@ public class Atacante extends Jogador {
 	
 	//Métodos
 	
-	public void chutarGol(Gol gol, Bola bola){
-		if (bola.chao){
-			gol.gol(time);
-		}
+	public void chutarGol(Gol gol){
+		gol.gol(time);
 	}
-	
-	@Override 
-	public void passeBola(Jogador companheiro){
-		if (bola && companheiro instanceof Atacante){
-			companheiro.bola = true;
-			this.bola = false;
+
+	@Override
+	public void passeBola(Jogador companheiro) {
+		if (posseBola && companheiro instanceof Atacante){
+			companheiro.posseBola = true;
+			this.posseBola = false;
 		}
+		
+	}
+
+	@Override
+	public void roubarBola(Jogador adversario) {
+		if (!posseBola && (adversario instanceof Zagueiro)){
+			this.posseBola = true;
+			adversario.posseBola = false;
+		}		
 	}
 
 }

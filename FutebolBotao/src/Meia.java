@@ -1,5 +1,5 @@
 
-public class Meia extends Jogador {
+public class Meia extends Jogador implements IJogadas{
 
 	public Meia (String nome, int numeroCamisa, String time){
 		super(nome, numeroCamisa, time);
@@ -8,20 +8,22 @@ public class Meia extends Jogador {
 	public void chutarGol (Gol OitentaE7ehNosso){
 		OitentaE7ehNosso.gol(time);
 	}
-	
+
 	@Override
-	public void passeBola(Jogador companheiro){
-		if (bola && companheiro instanceof Meia || companheiro instanceof Lateral || companheiro instanceof Atacante){
-			companheiro.bola = true;
-			this.bola = false;
+	public void passeBola(Jogador companheiro) {
+		if (posseBola && companheiro instanceof Meia || companheiro instanceof Lateral || companheiro instanceof Atacante){
+			companheiro.posseBola = true;
+			this.posseBola = false;
 		}
+		
 	}
-	
+
 	@Override
-	public void roubarBola(Jogador adversario){
-		if (!bola && adversario instanceof Volante && Math.random() < 0.5){
-			this.bola = true;
-			adversario.bola = false;
+	public void roubarBola(Jogador adversario) {
+		if (!posseBola && adversario instanceof Volante && Math.random() < 0.5){
+			this.posseBola = true;
+			adversario.posseBola = false;
 		}
-	}	
+		
+	}
 }
