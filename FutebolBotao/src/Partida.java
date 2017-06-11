@@ -78,7 +78,8 @@ public class Partida {
 		    		else {
 		    			j = zagueiroDA;
 		    		}
-		    		goleiroA.passeBola(j, escolhas);
+		    		m = goleiroA.passeBola(j, escolhas);
+		    		System.out.println(m);
 		    	}
 		    	else if(j instanceof Zagueiro){
 		    		if(j.getNumeroCamisa() == 4){
@@ -112,10 +113,12 @@ public class Partida {
 		    			j = lateralDA;
 		    		}
 		    		if (k.getNumeroCamisa() == 4){
-		    			zagueiroEA.passeBola(j, escolhas);
+		    			m = zagueiroEA.passeBola(j, escolhas, atacanteEB);
+		    			System.out.println(m);
 		    		}
 		    		else{
-		    			zagueiroDA.passeBola(j, escolhas);
+		    			m = zagueiroDA.passeBola(j, escolhas, atacanteDB);
+		    			System.out.println(m);
 		    		}
 		    	}
 		    	else if(j instanceof Lateral){
@@ -150,10 +153,12 @@ public class Partida {
 		    			j = atacanteEA;
 		    		}
 		    		if(k.getNumeroCamisa() == 3){
-		    			lateralDA.passeBola(j, escolhas);
+		    			m = lateralDA.passeBola(j, escolhas, lateralDB);
+		    			System.out.println(m);
 		    		}
 		    		else{
-		    			lateralEA.passeBola(j, escolhas);
+		    			m = lateralEA.passeBola(j, escolhas, lateralEB);
+		    			System.out.println(m);
 		    		}
 		    	}
 		    	else if(j instanceof Volante){
@@ -188,10 +193,12 @@ public class Partida {
 		    			j = atacanteEA;
 		    		}
 		    		if(k.getNumeroCamisa() == 5){
-		    			volanteEA.passeBola(j, escolhas);
+		    			m = volanteEA.passeBola(j, escolhas, meiaEB);
+		    			System.out.println(m);
 		    		}
 		    		else{
-		    			volanteDA.passeBola(j, escolhas);
+		    			m = volanteDA.passeBola(j, escolhas, meiaDB);
+		    			System.out.println(m);
 		    		}	
 		    	}
 		    	else if(j instanceof Meia){
@@ -228,18 +235,22 @@ public class Partida {
 		    		}
 		    		if(k.getNumeroCamisa() == 10){
 		    			if(escolhas == 0){
-		    				meiaEA.chutarGol(gol, "Sport");
+		    				m = meiaEA.chutarGol(gol, "Sport", goleiroB);
+		    				System.out.println(m);
 		    			}
 		    			else{
-		    				meiaEA.passeBola(j, escolhas);	
+		    				m = meiaEA.passeBola(j, escolhas, volanteEB);
+		    				System.out.println(m);
 		    			}
 		    		}
 		    		else{
 		    			if(escolhas == 0){
-		    				meiaDA.chutarGol(gol, "Sport");
+		    				m = meiaDA.chutarGol(gol, "Sport", goleiroB);
+		    				System.out.println(m);
 		    			}
 		    			else{
-		    				meiaDA.passeBola(j, escolhas);	
+		    				m = meiaDA.passeBola(j, escolhas, volanteDB);
+		    				System.out.println(m);
 		    			}
 		    		}
 		    	}
@@ -261,18 +272,22 @@ public class Partida {
 		    		}
 		    		if(k.getNumeroCamisa() == 9){
 		    			if(escolhas == 0){
-		    				atacanteDA.chutarGol(gol, "Sport");
+		    				m = atacanteDA.chutarGol(gol, "Sport", goleiroB);
+		    				System.out.println(m);
 		    			}
 		    			else{
-		    				atacanteDA.passeBola(j, escolhas);	
+		    				m = atacanteDA.passeBola(j, escolhas, zagueiroDB);	
+		    				System.out.println(m);
 		    			}
 		    		}
 		    		else{
 		    			if(escolhas == 0){
-		    				atacanteEA.chutarGol(gol, "Sport");
+		    				m = atacanteEA.chutarGol(gol, "Sport", goleiroB);
+		    				System.out.println(m);
 		    			}
 		    			else{
-		    				atacanteEA.passeBola(j, escolhas);	
+		    				m = atacanteEA.passeBola(j, escolhas, zagueiroEB);	
+		    				System.out.println(m);
 		    			}
 		    		}
 		    	}
@@ -290,7 +305,8 @@ public class Partida {
 		    		else {
 		    			j = zagueiroDB;
 		    		}
-		    		goleiroB.passeBola(j, escolhas);
+		    		m = goleiroB.passeBola(j, escolhas);
+		    		System.out.println(m);
 		    	}
 		    	else if(j instanceof Zagueiro){
 		    		if(j.getNumeroCamisa() == 4){
@@ -324,10 +340,12 @@ public class Partida {
 		    			j = lateralDB;
 		    		}
 		    		if (k.getNumeroCamisa() == 4){
-		    			zagueiroEB.passeBola(j, escolhas);
+		    			m = zagueiroEB.passeBola(j, escolhas, atacanteEA);
+		    			System.out.println(m);
 		    		}
 		    		else{
-		    			zagueiroDB.passeBola(j, escolhas);
+		    			m = zagueiroDB.passeBola(j, escolhas, atacanteDA);
+		    			System.out.println(m);
 		    		}
 		    	}
 		    	else if(j instanceof Lateral){
@@ -362,10 +380,12 @@ public class Partida {
 		    			j = atacanteEB;
 		    		}
 		    		if(k.getNumeroCamisa() == 3){
-		    			lateralDB.passeBola(j, escolhas);
+		    			m = lateralDB.passeBola(j, escolhas, lateralDA);
+		    			System.out.println(m);
 		    		}
 		    		else{
-		    			lateralEB.passeBola(j, escolhas);
+		    			m = lateralEB.passeBola(j, escolhas, lateralEA);
+		    			System.out.println(m);
 		    		}
 		    	}
 		    	else if(j instanceof Volante){
@@ -400,10 +420,12 @@ public class Partida {
 		    			j = atacanteEB;
 		    		}
 		    		if(k.getNumeroCamisa() == 5){
-		    			volanteEB.passeBola(j, escolhas);
+		    			m = volanteEB.passeBola(j, escolhas, meiaEA);
+		    			System.out.println(m);
 		    		}
 		    		else{
-		    			volanteDB.passeBola(j, escolhas);
+		    			m = volanteDB.passeBola(j, escolhas, meiaDA);
+		    			System.out.println(m);
 		    		}	
 		    	}
 		    	else if(j instanceof Meia){
@@ -440,18 +462,22 @@ public class Partida {
 		    		}
 		    		if(k.getNumeroCamisa() == 10){
 		    			if(escolhas == 0){
-		    				meiaEB.chutarGol(gol, "Brasil");
+		    				m = meiaEB.chutarGol(gol, "Brasil", goleiroA);
+		    				System.out.println(m);
 		    			}
 		    			else{
-		    				meiaEB.passeBola(j, escolhas);	
+		    				m = meiaEB.passeBola(j, escolhas, volanteEA);
+		    				System.out.println(m);
 		    			}
 		    		}
 		    		else{
 		    			if(escolhas == 0){
-		    				meiaDB.chutarGol(gol, "Brasil");
+		    				m = meiaDB.chutarGol(gol, "Brasil", goleiroA);
+		    				System.out.println(m);
 		    			}
 		    			else{
-		    				meiaDB.passeBola(j, escolhas);	
+		    				m = meiaDB.passeBola(j, escolhas, volanteDA);
+		    				System.out.println(m);
 		    			}
 		    		}
 		    	}
@@ -473,18 +499,22 @@ public class Partida {
 		    		}
 		    		if(k.getNumeroCamisa() == 9){
 		    			if(escolhas == 0){
-		    				atacanteDB.chutarGol(gol, "Brasil");
+		    				m = atacanteDB.chutarGol(gol, "Brasil", goleiroA);
+		    				System.out.println(m);
 		    			}
 		    			else{
-		    				atacanteDB.passeBola(j, escolhas);	
+		    				m = atacanteDB.passeBola(j, escolhas, zagueiroDA);	
+		    				System.out.println(m);
 		    			}
 		    		}
 		    		else{
 		    			if(escolhas == 0){
-		    				atacanteEB.chutarGol(gol, "Brasil");
+		    				m = atacanteEB.chutarGol(gol, "Brasil", goleiroA);
+		    				System.out.println(m);
 		    			}
 		    			else{
-		    				atacanteEB.passeBola(j, escolhas);	
+		    				m = atacanteEB.passeBola(j, escolhas, zagueiroEA);	
+		    				System.out.println(m);
 		    			}
 		    		}
 		    	}
@@ -493,33 +523,6 @@ public class Partida {
 		    System.out.println(gol.placar());
 		    System.out.println(tempo+" minutos do primeiro tempo");
 	    }while(tempo < 45);
-
-	    /*
-	    while(tempo < 45){
-	    	
-	    }
-	    System.out.println("Termina o primeiro tempo!");
-	    if (sorteio.equals("A")){
-	    	brasil.goleiro.posseBola = true;
-	    	System.out.printf("O %s recomeça com a posse de bola! \n",brasil.getNome());
-	    }
-	    else{
-	    	sport.goleiro.posseBola = true;
-	    	System.out.printf("O %s recomeça com a posse de bola! \n",sport.getNome());
-	    }
-	    //Segundo Tempo
-	    while(tempo < 90){
-	    	
-	    }
-	    */
-
-	    /*
-	    sport.atacanteD.chutarGol(gol, "Sport");
-	    m = gol.placar();
-	    
-	    System.out.printf(m);
-	    */
-
 	    
 	  }
 }

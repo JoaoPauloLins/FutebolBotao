@@ -5,22 +5,51 @@ public class Lateral extends Jogador implements IJogadas{
 	}
 
 	@Override
-	public void passeBola(Jogador companheiro, int numero) {
+	public String passeBola(Jogador companheiro, int numero, Lateral adversario){
+		String m = "";
 		if (posseBola && companheiro.getNumeroCamisa() == numero){
-			if(companheiro instanceof Meia || companheiro instanceof Atacante){
+			double p = Math.random();
+			if (p < 0.7 && (companheiro instanceof Lateral || companheiro instanceof Meia)){
+				//Acertou o passe
 				companheiro.posseBola = true;
 				this.posseBola = false;
-			}		
-		}		
+				if (adversario.roubarBola(companheiro, this.numeroCamisa)){
+					m = this.nome+" acertou o passe mas "+adversario.getNome()+" roubou a bola!";
+				}
+				else {
+					m = this.nome+" toca para "+companheiro.getNome();
+				}
+			}
+			else if(p < 0.5 && companheiro instanceof Atacante){
+				//Acertou o cruzamento
+				companheiro.posseBola = true;
+				this.posseBola = false;
+				if (adversario.roubarBola(companheiro, this.numeroCamisa)){
+					m = this.nome+" acertou o cruzamento mas "+adversario.getNome()+" roubou a bola!";
+				}
+				else {
+					m = this.nome+" cruzou para "+companheiro.getNome();
+				}
+			}
+			else{
+				//Errou o passe
+				this.posseBola = false;
+				adversario.posseBola = true;
+				m = this.nome+" errou o passe e a bola está com "+adversario.getNome();
+			}
+		}
+		return m;
 	}
 
 	@Override
-	public void roubarBola(Jogador adversario, int numero) {
-		if (!posseBola && adversario.getNumeroCamisa() == numero){
-			if (adversario instanceof Lateral){
-				this.posseBola = true;
-				adversario.posseBola = false;
-			}
+	public boolean roubarBola(Jogador adversario, int numero) {
+		if (!posseBola && adversario.getNumeroCamisa() == numero && Math.random() < 0.5){
+			this.posseBola = true;
+			adversario.posseBola = false;
+			return true;
+		}
+		else{
+			return false;
 		}
 	}
 }

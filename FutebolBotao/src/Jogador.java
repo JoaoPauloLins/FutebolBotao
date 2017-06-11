@@ -38,5 +38,26 @@ public class Jogador {
 	public void setTime(String time) {
 		this.time = time;
 	}
+	
+	// Métodos
+	public String passeBola(Jogador companheiro, int numero, Meia adversario){
+		return "";
+	}
+	public String passeBola(Jogador companheiro, int numero, Atacante adversario){
+		return "";
+	}
+	public String passeBola(Jogador companheiro, int numero, Volante adversario){
+		return "";
+	}
+	public String passeBola(Jogador companheiro, int numero, Zagueiro adversario){
+		return "";
+	}
+	public String passeBola(Jogador companheiro, int numero, Lateral adversario){
+		return "";
+	}
+	
+	public String passeBola(Jogador companheiro, int numero){
+		return "";
+	}
 }
                                                                                                                                                                                                                              

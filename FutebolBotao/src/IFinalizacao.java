@@ -1,5 +1,5 @@
 
 public interface IFinalizacao {
 
-	public void chutarGol(Gol gol,String time);
+	public String chutarGol(Gol gol,String time, Goleiro goleiro);
 }
