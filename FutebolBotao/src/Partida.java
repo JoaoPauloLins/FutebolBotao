@@ -7,6 +7,8 @@ public class Partida {
 		Scanner ler = new Scanner(System.in);
 	    int escolhas = 0;
 	    int tempo = 0;
+	    Time pontapeInicial;
+	    int metade = 1;
 	    String sorteio ="";
 	    String m = "";
 	    
@@ -51,11 +53,13 @@ public class Partida {
 	    if (Math.random() < 0.5){
 	    	sport.goleiro.posseBola = true;
 	    	System.out.printf("O %s começa com a posse de bola! \n",sport.getNome());
+	    	pontapeInicial = sport;
 	    	sorteio = "A";
 	    }
 	    else{
 	    	brasil.goleiro.posseBola = true;
 	    	System.out.printf("O %s começa com a posse de bola! \n",brasil.getNome());
+	    	pontapeInicial = brasil;
 	    	sorteio = "B";
 	    }
 	    //Primeiro Tempo
@@ -165,7 +169,7 @@ public class Partida {
 				    		} catch(java.util.InputMismatchException e){
 				    			System.out.println("Você deve digitar um valor numérico que seja o "+meiaDA.getNumeroCamisa()+" ou o "+atacanteDA.getNumeroCamisa()+" ou o "+lateralEA.getNumeroCamisa());}
 				    			ler.nextLine();
-				    		} while(escolhas != zagueiroDA.getNumeroCamisa() && escolhas != volanteEA.getNumeroCamisa() && escolhas != lateralEA.getNumeroCamisa());
+				    		} while(escolhas != meiaDA.getNumeroCamisa() && escolhas != atacanteDA.getNumeroCamisa() && escolhas != lateralEA.getNumeroCamisa());
 			    		}
 		    		else{
 			    		do{
@@ -280,8 +284,8 @@ public class Partida {
 				    			System.out.println("Ou digite 0 para chutar pro gol: ");
 				    			escolhas = ler.nextInt();
 				    		} catch(java.util.InputMismatchException e){
-				    			System.out.println("Você deve digitar um valor numérico que seja o "+meiaDA.getNumeroCamisa()+" ou o "+atacanteEA.getNumeroCamisa()+" ou o "+lateralEA.getNumeroCamisa());}
-				    			System.out.println("Ou digite 0 para chutar pro gol: ");
+				    			System.out.println("Você deve digitar um valor numérico que seja o "+meiaDA.getNumeroCamisa()+" ou o "+atacanteEA.getNumeroCamisa()+" ou o "+lateralEA.getNumeroCamisa());
+				    			System.out.println("Ou digite 0 para chutar pro gol: ");}
 				    			ler.nextLine();
 				    		} while(escolhas != meiaDA.getNumeroCamisa() && escolhas != lateralEA.getNumeroCamisa() && escolhas != atacanteEA.getNumeroCamisa() && escolhas != 0);
 			    		}
@@ -292,8 +296,8 @@ public class Partida {
 				    			System.out.println("Ou digite 0 para chutar pro gol: ");
 				    			escolhas = ler.nextInt();
 				    		} catch(java.util.InputMismatchException e){
-				    			System.out.println("Você deve digitar um valor numérico que seja o "+meiaEA.getNumeroCamisa()+" ou o "+atacanteDA.getNumeroCamisa()+" ou o "+lateralDA.getNumeroCamisa());}
-				    			System.out.println("Ou digite 0 para chutar pro gol: ");
+				    			System.out.println("Você deve digitar um valor numérico que seja o "+meiaEA.getNumeroCamisa()+" ou o "+atacanteDA.getNumeroCamisa()+" ou o "+lateralDA.getNumeroCamisa());
+				    			System.out.println("Ou digite 0 para chutar pro gol: ");}
 				    			ler.nextLine();
 				    		} while(escolhas != meiaEA.getNumeroCamisa() && escolhas != atacanteDA.getNumeroCamisa() && escolhas != lateralDA.getNumeroCamisa() && escolhas != 0);
 			    		}
@@ -350,8 +354,8 @@ public class Partida {
 				    			System.out.println("Ou digite 0 para chutar pro gol: ");
 				    			escolhas = ler.nextInt();
 				    		} catch(java.util.InputMismatchException e){
-				    			System.out.println("Você deve digitar um valor numérico que seja o "+atacanteEA.getNumeroCamisa());}
-				    			System.out.println("Ou digite 0 para chutar pro gol: ");
+				    			System.out.println("Você deve digitar um valor numérico que seja o "+atacanteEA.getNumeroCamisa());
+				    			System.out.println("Ou digite 0 para chutar pro gol: ");}
 				    			ler.nextLine();
 				    		} while(escolhas != atacanteEA.getNumeroCamisa() && escolhas != 0);
 			    		}
@@ -362,8 +366,8 @@ public class Partida {
 				    			System.out.println("Ou digite 0 para chutar pro gol: ");
 				    			escolhas = ler.nextInt();
 				    		} catch(java.util.InputMismatchException e){
-				    			System.out.println("Você deve digitar um valor numérico que seja o "+atacanteDA.getNumeroCamisa());}
-				    			System.out.println("Ou digite 0 para chutar pro gol: ");
+				    			System.out.println("Você deve digitar um valor numérico que seja o "+atacanteDA.getNumeroCamisa());
+				    			System.out.println("Ou digite 0 para chutar pro gol: ");}
 				    			ler.nextLine();
 				    		} while(escolhas != atacanteDA.getNumeroCamisa() && escolhas != 0);
 			    		}
@@ -495,7 +499,7 @@ public class Partida {
 				    		} catch(java.util.InputMismatchException e){
 				    			System.out.println("Você deve digitar um valor numérico que seja o "+meiaDB.getNumeroCamisa()+" ou o "+atacanteDB.getNumeroCamisa()+" ou o "+lateralEB.getNumeroCamisa());}
 				    			ler.nextLine();
-				    		} while(escolhas != zagueiroDB.getNumeroCamisa() && escolhas != volanteEB.getNumeroCamisa() && escolhas != lateralEB.getNumeroCamisa());
+				    		} while(escolhas != meiaDB.getNumeroCamisa() && escolhas != atacanteDB.getNumeroCamisa() && escolhas != lateralEB.getNumeroCamisa());
 			    		}
 		    		else{
 			    		do{
@@ -610,8 +614,8 @@ public class Partida {
 				    			System.out.println("Ou digite 0 para chutar pro gol: ");
 				    			escolhas = ler.nextInt();
 				    		} catch(java.util.InputMismatchException e){
-				    			System.out.println("Você deve digitar um valor numérico que seja o "+meiaDB.getNumeroCamisa()+" ou o "+atacanteEB.getNumeroCamisa()+" ou o "+lateralEB.getNumeroCamisa());}
-				    			System.out.println("Ou digite 0 para chutar pro gol: ");
+				    			System.out.println("Você deve digitar um valor numérico que seja o "+meiaDB.getNumeroCamisa()+" ou o "+atacanteEB.getNumeroCamisa()+" ou o "+lateralEB.getNumeroCamisa());
+				    			System.out.println("Ou digite 0 para chutar pro gol: ");}
 				    			ler.nextLine();
 				    		} while(escolhas != meiaDB.getNumeroCamisa() && escolhas != lateralEB.getNumeroCamisa() && escolhas != atacanteEB.getNumeroCamisa() && escolhas != 0);
 			    		}
@@ -622,8 +626,8 @@ public class Partida {
 				    			System.out.println("Ou digite 0 para chutar pro gol: ");
 				    			escolhas = ler.nextInt();
 				    		} catch(java.util.InputMismatchException e){
-				    			System.out.println("Você deve digitar um valor numérico que seja o "+meiaEB.getNumeroCamisa()+" ou o "+atacanteDB.getNumeroCamisa()+" ou o "+lateralDB.getNumeroCamisa());}
-				    			System.out.println("Ou digite 0 para chutar pro gol: ");
+				    			System.out.println("Você deve digitar um valor numérico que seja o "+meiaEB.getNumeroCamisa()+" ou o "+atacanteDB.getNumeroCamisa()+" ou o "+lateralDB.getNumeroCamisa());
+				    			System.out.println("Ou digite 0 para chutar pro gol: ");}
 				    			ler.nextLine();
 				    		} while(escolhas != meiaEB.getNumeroCamisa() && escolhas != atacanteDB.getNumeroCamisa() && escolhas != lateralDB.getNumeroCamisa() && escolhas != 0);
 			    		}
@@ -680,8 +684,8 @@ public class Partida {
 				    			System.out.println("Ou digite 0 para chutar pro gol: ");
 				    			escolhas = ler.nextInt();
 				    		} catch(java.util.InputMismatchException e){
-				    			System.out.println("Você deve digitar um valor numérico que seja o "+atacanteEB.getNumeroCamisa());}
-				    			System.out.println("Ou digite 0 para chutar pro gol: ");
+				    			System.out.println("Você deve digitar um valor numérico que seja o "+atacanteEB.getNumeroCamisa());
+				    			System.out.println("Ou digite 0 para chutar pro gol: ");}
 				    			ler.nextLine();
 				    		} while(escolhas != atacanteEB.getNumeroCamisa() && escolhas != 0);
 			    		}
@@ -692,8 +696,8 @@ public class Partida {
 				    			System.out.println("Ou digite 0 para chutar pro gol: ");
 				    			escolhas = ler.nextInt();
 				    		} catch(java.util.InputMismatchException e){
-				    			System.out.println("Você deve digitar um valor numérico que seja o "+atacanteDB.getNumeroCamisa());}
-				    			System.out.println("Ou digite 0 para chutar pro gol: ");
+				    			System.out.println("Você deve digitar um valor numérico que seja o "+atacanteDB.getNumeroCamisa());
+				    			System.out.println("Ou digite 0 para chutar pro gol: ");}
 				    			ler.nextLine();
 				    		} while(escolhas != atacanteDB.getNumeroCamisa() && escolhas != 0);
 			    		}
@@ -725,15 +729,46 @@ public class Partida {
 		    		}
 		    	}
 		    }
-		    tempo++;
+		    tempo++;		    
+		    if(metade == 1 && tempo <= 45){
 		    System.out.println(gol.placar());
-		    if(tempo <45){
-		    System.out.println(tempo+" minutos do primeiro tempo");
+		    System.out.println(tempo+" minuto(s) do primeiro tempo");
 		    }
-		    else{
-			    System.out.println(tempo+" minutos do segundo tempo");
+		    else if(metade == 1 && tempo >45){
+		    	System.out.println("\nFIM DO PRIMEIRO TEMPO!");
+		    	Jogador possui = bola.quemBola();
+		    	possui.posseBola = false;
+		    	if(pontapeInicial.equals(sport)){
+		    		brasil.goleiro.posseBola = true;
+		    	}
+		    	else{
+		    		sport.goleiro.posseBola = true;
+		    	}
+		    	System.out.println(gol.placar());
+		    	tempo = 0;
+		    	metade++;
+		    	System.out.println("\nCOMEÇA O SEGUNDO TEMPO!");
 		    }
-	    }while(tempo < 90);
+		    if(metade == 2 && tempo <=45){
+		    	System.out.println(gol.placar());
+			    System.out.println(tempo+" minuto(s) do segundo tempo");
+		    }
+		    else if(metade == 2 && tempo > 45){
+		    	System.out.println("\nFIM DE JOGO!");
+		    	if(gol.getTimeA().pontuacao > gol.getTimeB().pontuacao){
+		    		System.out.println("O "+gol.getTimeA().nome+" Venceu a partida por "+gol.getTimeA().pontuacao+" x "+gol.getTimeB().pontuacao+" !");
+		    	}
+		    	else if (gol.getTimeA().pontuacao > gol.getTimeB().pontuacao){
+		    		System.out.println("O jogo terminou empatado entre "+gol.getTimeA().nome+" e "+gol.getTimeB().nome+" pelo placar de"+gol.getTimeA().pontuacao+" x "+gol.getTimeB().pontuacao);
+		    	}
+		    	else{
+		    		System.out.println("O Jogo entre "+gol.getTimeA().nome+" e "+gol.getTimeB().nome+" terminou empatado em "+gol.getTimeA().pontuacao+" x "+gol.getTimeB().pontuacao);
+		    	}
+		    	System.out.println("Obrigado a ambas as equipes, nossa transmissão fica por aqui!");
+		    	metade++;
+		    }
+		    
+		    }while(metade <= 2);
 	    
 	  }
 }
