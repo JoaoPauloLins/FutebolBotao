@@ -32,7 +32,7 @@ public class Partida {
 	    Zagueiro zagueiroDB = new Zagueiro("Tiago Silva",2,"Brasil");
 	    Lateral lateralEB = new Lateral("Marcelo",6,"Brasil");
 	    Lateral lateralDB = new Lateral("Daniel Alves",3,"Brasil");
-	    Volante volanteEB = new Volante("Cazemiro",5,"Brasil");
+	    Volante volanteEB = new Volante("Casemiro",5,"Brasil");
 	    Volante volanteDB = new Volante("Paulinho",7,"Brasil");
 	    Meia meiaEB = new Meia("Renato Augusto", 10,"Brasil");
 	    Meia meiaDB = new Meia("Felipe Coutinho",8,"Brasil");
@@ -70,8 +70,15 @@ public class Partida {
 		    	if (j instanceof Goleiro){
 		    		System.out.println(zagueiroEA.getNome()+" ("+zagueiroEA.getNumeroCamisa()+")");
 		    		System.out.println(zagueiroDA.getNome()+" ("+zagueiroDA.getNumeroCamisa()+")");
-		    		System.out.println("Digite o número do jogador que "+j.getNome()+" irá tocar a bola:");
-		    		escolhas = ler.nextInt();
+		    		do{
+		    		try{
+		    			System.out.println("Digite o número do jogador que "+j.getNome()+" irá tocar a bola: "+zagueiroEA.getNumeroCamisa()+" ou "+zagueiroDA.getNumeroCamisa());
+		    			escolhas = ler.nextInt();
+		    		} catch(java.util.InputMismatchException e){
+		    			System.out.println("Você deve digitar um valor numérico que seja o "+zagueiroEA.getNumeroCamisa()+" ou o "+zagueiroDA.getNumeroCamisa()
+		    			);}
+		    			ler.nextLine();
+		    		} while(escolhas != zagueiroEA.getNumeroCamisa() && escolhas != zagueiroDA.getNumeroCamisa());
 		    		if (escolhas == zagueiroEA.getNumeroCamisa()){
 		    			j = zagueiroEA;
 		    		}
@@ -92,8 +99,26 @@ public class Partida {
 		    			System.out.println(volanteDA.getNome()+" ("+volanteDA.getNumeroCamisa()+")");
 		    			System.out.println(lateralDA.getNome()+" ("+lateralDA.getNumeroCamisa()+")");
 		    		}
-		    		System.out.println("Digite o número do jogador que "+j.getNome()+" irá tocar a bola:");
-		    		escolhas = ler.nextInt();
+		    		if(j.getNumeroCamisa() == 4){
+		    		do{
+			    		try{
+			    			System.out.println("Digite o número do jogador que "+j.getNome()+" irá tocar a bola: "+zagueiroDA.getNumeroCamisa()+" ou "+volanteEA.getNumeroCamisa()+" ou "+lateralEA.getNumeroCamisa());
+			    			escolhas = ler.nextInt();
+			    		} catch(java.util.InputMismatchException e){
+			    			System.out.println("Você deve digitar um valor numérico que seja o "+zagueiroDA.getNumeroCamisa()+" ou o "+volanteEA.getNumeroCamisa()+" ou o "+lateralEA.getNumeroCamisa());}
+			    			ler.nextLine();
+			    		} while(escolhas != zagueiroDA.getNumeroCamisa() && escolhas != volanteEA.getNumeroCamisa() && escolhas != lateralEA.getNumeroCamisa());
+		    		}
+		    		else{
+			    		do{
+				    		try{
+				    			System.out.println("Digite o número do jogador que "+j.getNome()+" irá tocar a bola: "+zagueiroEA.getNumeroCamisa()+" ou "+volanteDA.getNumeroCamisa()+" ou "+lateralDA.getNumeroCamisa());
+				    			escolhas = ler.nextInt();
+				    		} catch(java.util.InputMismatchException e){
+				    			System.out.println("Você deve digitar um valor numérico que seja o "+zagueiroDA.getNumeroCamisa()+" ou o "+volanteEA.getNumeroCamisa()+" ou o "+lateralEA.getNumeroCamisa());}
+				    			ler.nextLine();
+				    		} while(escolhas != zagueiroEA.getNumeroCamisa() && escolhas != volanteDA.getNumeroCamisa() && escolhas != lateralDA.getNumeroCamisa());
+			    		}
 		    		if(escolhas == zagueiroDA.getNumeroCamisa()){
 		    			j = zagueiroDA;
 		    		}
@@ -132,8 +157,26 @@ public class Partida {
 		    			System.out.println(atacanteEA.getNome()+" ("+atacanteEA.getNumeroCamisa()+")");
 		    			System.out.println(lateralDA.getNome()+" ("+lateralDA.getNumeroCamisa()+")");
 		    		}
-		    		System.out.println("Digite o número do jogador que "+j.getNome()+" irá tocar a bola:");
-		    		escolhas = ler.nextInt();
+		    		if(j.getNumeroCamisa() == 3){
+			    		do{
+				    		try{
+				    			System.out.println("Digite o número do jogador que "+j.getNome()+" irá tocar a bola: "+meiaDA.getNumeroCamisa()+" ou "+atacanteDA.getNumeroCamisa()+" ou "+lateralEA.getNumeroCamisa());
+				    			escolhas = ler.nextInt();
+				    		} catch(java.util.InputMismatchException e){
+				    			System.out.println("Você deve digitar um valor numérico que seja o "+meiaDA.getNumeroCamisa()+" ou o "+atacanteDA.getNumeroCamisa()+" ou o "+lateralEA.getNumeroCamisa());}
+				    			ler.nextLine();
+				    		} while(escolhas != zagueiroDA.getNumeroCamisa() && escolhas != volanteEA.getNumeroCamisa() && escolhas != lateralEA.getNumeroCamisa());
+			    		}
+		    		else{
+			    		do{
+				    		try{
+				    			System.out.println("Digite o número do jogador que "+j.getNome()+" irá tocar a bola: "+meiaEA.getNumeroCamisa()+" ou "+atacanteEA.getNumeroCamisa()+" ou "+lateralDA.getNumeroCamisa());
+				    			escolhas = ler.nextInt();
+				    		} catch(java.util.InputMismatchException e){
+				    			System.out.println("Você deve digitar um valor numérico que seja o "+meiaEA.getNumeroCamisa()+" ou o "+atacanteEA.getNumeroCamisa()+" ou o "+lateralDA.getNumeroCamisa());}
+				    			ler.nextLine();
+				    		} while(escolhas != meiaEA.getNumeroCamisa() && escolhas != atacanteEA.getNumeroCamisa() && escolhas != lateralDA.getNumeroCamisa());
+			    		}
 		    		if(escolhas == meiaDA.getNumeroCamisa()){
 		    			j = meiaDA;
 		    		}
@@ -172,8 +215,26 @@ public class Partida {
 		    			System.out.println(lateralDA.getNome()+" ("+lateralDA.getNumeroCamisa()+")");
 		    			System.out.println(atacanteDA.getNome()+" ("+atacanteDA.getNumeroCamisa()+")");
 		    		}
-		    		System.out.println("Digite o número do jogador que "+j.getNome()+" irá tocar a bola:");
-		    		escolhas = ler.nextInt();
+		    		if(j.getNumeroCamisa() == 5){
+			    		do{
+				    		try{
+				    			System.out.println("Digite o número do jogador que "+j.getNome()+" irá tocar a bola: "+meiaEA.getNumeroCamisa()+" ou "+atacanteEA.getNumeroCamisa()+" ou "+lateralEA.getNumeroCamisa());
+				    			escolhas = ler.nextInt();
+				    		} catch(java.util.InputMismatchException e){
+				    			System.out.println("Você deve digitar um valor numérico que seja o "+meiaEA.getNumeroCamisa()+" ou o "+atacanteEA.getNumeroCamisa()+" ou o "+lateralEA.getNumeroCamisa());}
+				    			ler.nextLine();
+				    		} while(escolhas != meiaEA.getNumeroCamisa() && escolhas != lateralEA.getNumeroCamisa() && escolhas != atacanteEA.getNumeroCamisa());
+			    		}
+		    		else{
+			    		do{
+				    		try{
+				    			System.out.println("Digite o número do jogador que "+j.getNome()+" irá tocar a bola: "+meiaDA.getNumeroCamisa()+" ou "+atacanteDA.getNumeroCamisa()+" ou "+lateralDA.getNumeroCamisa());
+				    			escolhas = ler.nextInt();
+				    		} catch(java.util.InputMismatchException e){
+				    			System.out.println("Você deve digitar um valor numérico que seja o "+meiaDA.getNumeroCamisa()+" ou o "+atacanteDA.getNumeroCamisa()+" ou o "+lateralDA.getNumeroCamisa());}
+				    			ler.nextLine();
+				    		} while(escolhas != meiaDA.getNumeroCamisa() && escolhas != atacanteDA.getNumeroCamisa() && escolhas != lateralDA.getNumeroCamisa());
+			    		}
 		    		if (escolhas == meiaEA.getNumeroCamisa()){
 		    			j = meiaEA;
 		    		}
@@ -211,10 +272,31 @@ public class Partida {
 		    			System.out.println(atacanteDA.getNome()+" ("+atacanteDA.getNumeroCamisa()+")");
 		    			System.out.println(lateralDA.getNome()+" ("+lateralDA.getNumeroCamisa()+")");
 		    			System.out.println(meiaEA.getNome()+" ("+meiaEA.getNumeroCamisa()+")");
-		    		}
-		    		System.out.println("Digite o número do jogador que "+j.getNome()+" irá tocar a bola;");
-		    		System.out.println("Ou digite 0 para chutar pro gol: ");
-		    		escolhas = ler.nextInt();
+		    		}		    		
+		    		if(j.getNumeroCamisa() == 10){
+			    		do{
+				    		try{
+				    			System.out.println("Digite o número do jogador que "+j.getNome()+" irá tocar a bola: "+meiaDA.getNumeroCamisa()+" ou "+atacanteEA.getNumeroCamisa()+" ou "+lateralEA.getNumeroCamisa());
+				    			System.out.println("Ou digite 0 para chutar pro gol: ");
+				    			escolhas = ler.nextInt();
+				    		} catch(java.util.InputMismatchException e){
+				    			System.out.println("Você deve digitar um valor numérico que seja o "+meiaDA.getNumeroCamisa()+" ou o "+atacanteEA.getNumeroCamisa()+" ou o "+lateralEA.getNumeroCamisa());}
+				    			System.out.println("Ou digite 0 para chutar pro gol: ");
+				    			ler.nextLine();
+				    		} while(escolhas != meiaDA.getNumeroCamisa() && escolhas != lateralEA.getNumeroCamisa() && escolhas != atacanteEA.getNumeroCamisa() && escolhas != 0);
+			    		}
+		    		else{
+			    		do{
+				    		try{
+				    			System.out.println("Digite o número do jogador que "+j.getNome()+" irá tocar a bola: "+meiaEA.getNumeroCamisa()+" ou "+atacanteDA.getNumeroCamisa()+" ou "+lateralDA.getNumeroCamisa());
+				    			System.out.println("Ou digite 0 para chutar pro gol: ");
+				    			escolhas = ler.nextInt();
+				    		} catch(java.util.InputMismatchException e){
+				    			System.out.println("Você deve digitar um valor numérico que seja o "+meiaEA.getNumeroCamisa()+" ou o "+atacanteDA.getNumeroCamisa()+" ou o "+lateralDA.getNumeroCamisa());}
+				    			System.out.println("Ou digite 0 para chutar pro gol: ");
+				    			ler.nextLine();
+				    		} while(escolhas != meiaEA.getNumeroCamisa() && escolhas != atacanteDA.getNumeroCamisa() && escolhas != lateralDA.getNumeroCamisa() && escolhas != 0);
+			    		}
 		    		if (escolhas == meiaEA.getNumeroCamisa()){
 		    			j = meiaEA;
 		    		}
@@ -261,9 +343,30 @@ public class Partida {
 		    		else{
 		    			System.out.println(atacanteDA.getNome()+" ("+atacanteDA.getNumeroCamisa()+")");
 		    		}
-		    		System.out.println("Digite o número do jogador que "+j.getNome()+" irá tocar a bola;");
-		    		System.out.println("Ou digite 0 para chutar pro gol: ");
-		    		escolhas = ler.nextInt();
+		    		if(j.getNumeroCamisa() == 9){
+			    		do{
+				    		try{
+				    			System.out.println("Digite o número do jogador que "+j.getNome()+" irá tocar a bola: "+atacanteEA.getNumeroCamisa());
+				    			System.out.println("Ou digite 0 para chutar pro gol: ");
+				    			escolhas = ler.nextInt();
+				    		} catch(java.util.InputMismatchException e){
+				    			System.out.println("Você deve digitar um valor numérico que seja o "+atacanteEA.getNumeroCamisa());}
+				    			System.out.println("Ou digite 0 para chutar pro gol: ");
+				    			ler.nextLine();
+				    		} while(escolhas != atacanteEA.getNumeroCamisa() && escolhas != 0);
+			    		}
+		    		else{
+			    		do{
+				    		try{
+				    			System.out.println("Digite o número do jogador que "+j.getNome()+" irá tocar a bola: "+atacanteDA.getNumeroCamisa());
+				    			System.out.println("Ou digite 0 para chutar pro gol: ");
+				    			escolhas = ler.nextInt();
+				    		} catch(java.util.InputMismatchException e){
+				    			System.out.println("Você deve digitar um valor numérico que seja o "+atacanteDA.getNumeroCamisa());}
+				    			System.out.println("Ou digite 0 para chutar pro gol: ");
+				    			ler.nextLine();
+				    		} while(escolhas != atacanteDA.getNumeroCamisa() && escolhas != 0);
+			    		}
 		    		if(escolhas == atacanteDA.getNumeroCamisa()){
 		    			j = atacanteDA;
 		    		}
@@ -297,8 +400,15 @@ public class Partida {
 		    	if (j instanceof Goleiro){
 		    		System.out.println(zagueiroEB.getNome()+" ("+zagueiroEB.getNumeroCamisa()+")");
 		    		System.out.println(zagueiroDB.getNome()+" ("+zagueiroDB.getNumeroCamisa()+")");
-		    		System.out.println("Digite o número do jogador que "+j.getNome()+" irá tocar a bola:");
-		    		escolhas = ler.nextInt();
+		    		do{
+			    		try{
+			    			System.out.println("Digite o número do jogador que "+j.getNome()+" irá tocar a bola: "+zagueiroEB.getNumeroCamisa()+" ou "+zagueiroDB.getNumeroCamisa());
+			    			escolhas = ler.nextInt();
+			    		} catch(java.util.InputMismatchException e){
+			    			System.out.println("Você deve digitar um valor numérico que seja o "+zagueiroEB.getNumeroCamisa()+" ou o "+zagueiroDB.getNumeroCamisa()
+			    			);}
+			    			ler.nextLine();
+			    		} while(escolhas != zagueiroEB.getNumeroCamisa() && escolhas != zagueiroDB.getNumeroCamisa());
 		    		if (escolhas == zagueiroEB.getNumeroCamisa()){
 		    			j = zagueiroEB;
 		    		}
@@ -319,8 +429,26 @@ public class Partida {
 		    			System.out.println(volanteDB.getNome()+" ("+volanteDB.getNumeroCamisa()+")");
 		    			System.out.println(lateralDB.getNome()+" ("+lateralDB.getNumeroCamisa()+")");
 		    		}
-		    		System.out.println("Digite o número do jogador que "+j.getNome()+" irá tocar a bola:");
-		    		escolhas = ler.nextInt();
+		    		if(j.getNumeroCamisa() == 4){
+			    		do{
+				    		try{
+				    			System.out.println("Digite o número do jogador que "+j.getNome()+" irá tocar a bola: "+zagueiroDB.getNumeroCamisa()+" ou "+volanteEB.getNumeroCamisa()+" ou "+lateralEB.getNumeroCamisa());
+				    			escolhas = ler.nextInt();
+				    		} catch(java.util.InputMismatchException e){
+				    			System.out.println("Você deve digitar um valor numérico que seja o "+zagueiroDB.getNumeroCamisa()+" ou o "+volanteEB.getNumeroCamisa()+" ou o "+lateralEB.getNumeroCamisa());}
+				    			ler.nextLine();
+				    		} while(escolhas != zagueiroDB.getNumeroCamisa() && escolhas != volanteEB.getNumeroCamisa() && escolhas != lateralEB.getNumeroCamisa());
+			    		}
+			    		else{
+				    		do{
+					    		try{
+					    			System.out.println("Digite o número do jogador que "+j.getNome()+" irá tocar a bola: "+zagueiroEB.getNumeroCamisa()+" ou "+volanteDB.getNumeroCamisa()+" ou "+lateralDB.getNumeroCamisa());
+					    			escolhas = ler.nextInt();
+					    		} catch(java.util.InputMismatchException e){
+					    			System.out.println("Você deve digitar um valor numérico que seja o "+zagueiroDB.getNumeroCamisa()+" ou o "+volanteEB.getNumeroCamisa()+" ou o "+lateralEB.getNumeroCamisa());}
+					    			ler.nextLine();
+					    		} while(escolhas != zagueiroEB.getNumeroCamisa() && escolhas != volanteDB.getNumeroCamisa() && escolhas != lateralDB.getNumeroCamisa());
+				    		}
 		    		if(escolhas == zagueiroDB.getNumeroCamisa()){
 		    			j = zagueiroDB;
 		    		}
@@ -359,8 +487,26 @@ public class Partida {
 		    			System.out.println(atacanteEB.getNome()+" ("+atacanteEB.getNumeroCamisa()+")");
 		    			System.out.println(lateralDB.getNome()+" ("+lateralDB.getNumeroCamisa()+")");
 		    		}
-		    		System.out.println("Digite o número do jogador que "+j.getNome()+" irá tocar a bola:");
-		    		escolhas = ler.nextInt();
+		    		if(j.getNumeroCamisa() == 3){
+			    		do{
+				    		try{
+				    			System.out.println("Digite o número do jogador que "+j.getNome()+" irá tocar a bola: "+meiaDB.getNumeroCamisa()+" ou "+atacanteDB.getNumeroCamisa()+" ou "+lateralEB.getNumeroCamisa());
+				    			escolhas = ler.nextInt();
+				    		} catch(java.util.InputMismatchException e){
+				    			System.out.println("Você deve digitar um valor numérico que seja o "+meiaDB.getNumeroCamisa()+" ou o "+atacanteDB.getNumeroCamisa()+" ou o "+lateralEB.getNumeroCamisa());}
+				    			ler.nextLine();
+				    		} while(escolhas != zagueiroDB.getNumeroCamisa() && escolhas != volanteEB.getNumeroCamisa() && escolhas != lateralEB.getNumeroCamisa());
+			    		}
+		    		else{
+			    		do{
+				    		try{
+				    			System.out.println("Digite o número do jogador que "+j.getNome()+" irá tocar a bola: "+meiaEB.getNumeroCamisa()+" ou "+atacanteEB.getNumeroCamisa()+" ou "+lateralDB.getNumeroCamisa());
+				    			escolhas = ler.nextInt();
+				    		} catch(java.util.InputMismatchException e){
+				    			System.out.println("Você deve digitar um valor numérico que seja o "+meiaEB.getNumeroCamisa()+" ou o "+atacanteEB.getNumeroCamisa()+" ou o "+lateralDB.getNumeroCamisa());}
+				    			ler.nextLine();
+				    		} while(escolhas != meiaEB.getNumeroCamisa() && escolhas != atacanteEB.getNumeroCamisa() && escolhas != lateralDB.getNumeroCamisa());
+			    		}
 		    		if(escolhas == meiaDB.getNumeroCamisa()){
 		    			j = meiaDB;
 		    		}
@@ -399,8 +545,26 @@ public class Partida {
 		    			System.out.println(lateralDB.getNome()+" ("+lateralDB.getNumeroCamisa()+")");
 		    			System.out.println(atacanteDB.getNome()+" ("+atacanteDB.getNumeroCamisa()+")");
 		    		}
-		    		System.out.println("Digite o número do jogador que "+j.getNome()+" irá tocar a bola:");
-		    		escolhas = ler.nextInt();
+		    		if(j.getNumeroCamisa() == 5){
+			    		do{
+				    		try{
+				    			System.out.println("Digite o número do jogador que "+j.getNome()+" irá tocar a bola: "+meiaEB.getNumeroCamisa()+" ou "+atacanteEB.getNumeroCamisa()+" ou "+lateralEB.getNumeroCamisa());
+				    			escolhas = ler.nextInt();
+				    		} catch(java.util.InputMismatchException e){
+				    			System.out.println("Você deve digitar um valor numérico que seja o "+meiaEB.getNumeroCamisa()+" ou o "+atacanteEB.getNumeroCamisa()+" ou o "+lateralEB.getNumeroCamisa());}
+				    			ler.nextLine();
+				    		} while(escolhas != meiaEB.getNumeroCamisa() && escolhas != lateralEB.getNumeroCamisa() && escolhas != atacanteEB.getNumeroCamisa());
+			    		}
+		    		else{
+			    		do{
+				    		try{
+				    			System.out.println("Digite o número do jogador que "+j.getNome()+" irá tocar a bola: "+meiaDB.getNumeroCamisa()+" ou "+atacanteDB.getNumeroCamisa()+" ou "+lateralDB.getNumeroCamisa());
+				    			escolhas = ler.nextInt();
+				    		} catch(java.util.InputMismatchException e){
+				    			System.out.println("Você deve digitar um valor numérico que seja o "+meiaDB.getNumeroCamisa()+" ou o "+atacanteDB.getNumeroCamisa()+" ou o "+lateralDB.getNumeroCamisa());}
+				    			ler.nextLine();
+				    		} while(escolhas != meiaDB.getNumeroCamisa() && escolhas != atacanteDB.getNumeroCamisa() && escolhas != lateralDB.getNumeroCamisa());
+			    		}
 		    		if (escolhas == meiaEB.getNumeroCamisa()){
 		    			j = meiaEB;
 		    		}
@@ -439,9 +603,30 @@ public class Partida {
 		    			System.out.println(lateralDB.getNome()+" ("+lateralDB.getNumeroCamisa()+")");
 		    			System.out.println(meiaEB.getNome()+" ("+meiaEB.getNumeroCamisa()+")");
 		    		}
-		    		System.out.println("Digite o número do jogador que "+j.getNome()+" irá tocar a bola;");
-		    		System.out.println("Ou digite 0 para chutar pro gol: ");
-		    		escolhas = ler.nextInt();
+		    		if(j.getNumeroCamisa() == 10){
+			    		do{
+				    		try{
+				    			System.out.println("Digite o número do jogador que "+j.getNome()+" irá tocar a bola: "+meiaDB.getNumeroCamisa()+" ou "+atacanteEB.getNumeroCamisa()+" ou "+lateralEB.getNumeroCamisa());
+				    			System.out.println("Ou digite 0 para chutar pro gol: ");
+				    			escolhas = ler.nextInt();
+				    		} catch(java.util.InputMismatchException e){
+				    			System.out.println("Você deve digitar um valor numérico que seja o "+meiaDB.getNumeroCamisa()+" ou o "+atacanteEB.getNumeroCamisa()+" ou o "+lateralEB.getNumeroCamisa());}
+				    			System.out.println("Ou digite 0 para chutar pro gol: ");
+				    			ler.nextLine();
+				    		} while(escolhas != meiaDB.getNumeroCamisa() && escolhas != lateralEB.getNumeroCamisa() && escolhas != atacanteEB.getNumeroCamisa() && escolhas != 0);
+			    		}
+		    		else{
+			    		do{
+				    		try{
+				    			System.out.println("Digite o número do jogador que "+j.getNome()+" irá tocar a bola: "+meiaEB.getNumeroCamisa()+" ou "+atacanteDB.getNumeroCamisa()+" ou "+lateralDB.getNumeroCamisa());
+				    			System.out.println("Ou digite 0 para chutar pro gol: ");
+				    			escolhas = ler.nextInt();
+				    		} catch(java.util.InputMismatchException e){
+				    			System.out.println("Você deve digitar um valor numérico que seja o "+meiaEB.getNumeroCamisa()+" ou o "+atacanteDB.getNumeroCamisa()+" ou o "+lateralDB.getNumeroCamisa());}
+				    			System.out.println("Ou digite 0 para chutar pro gol: ");
+				    			ler.nextLine();
+				    		} while(escolhas != meiaEB.getNumeroCamisa() && escolhas != atacanteDB.getNumeroCamisa() && escolhas != lateralDB.getNumeroCamisa() && escolhas != 0);
+			    		}
 		    		if (escolhas == meiaEB.getNumeroCamisa()){
 		    			j = meiaEB;
 		    		}
@@ -488,9 +673,30 @@ public class Partida {
 		    		else{
 		    			System.out.println(atacanteDB.getNome()+" ("+atacanteDB.getNumeroCamisa()+")");
 		    		}
-		    		System.out.println("Digite o número do jogador que "+j.getNome()+" irá tocar a bola;");
-		    		System.out.println("Ou digite 0 para chutar pro gol: ");
-		    		escolhas = ler.nextInt();
+		    		if(j.getNumeroCamisa() == 9){
+			    		do{
+				    		try{
+				    			System.out.println("Digite o número do jogador que "+j.getNome()+" irá tocar a bola: "+atacanteEB.getNumeroCamisa());
+				    			System.out.println("Ou digite 0 para chutar pro gol: ");
+				    			escolhas = ler.nextInt();
+				    		} catch(java.util.InputMismatchException e){
+				    			System.out.println("Você deve digitar um valor numérico que seja o "+atacanteEB.getNumeroCamisa());}
+				    			System.out.println("Ou digite 0 para chutar pro gol: ");
+				    			ler.nextLine();
+				    		} while(escolhas != atacanteEB.getNumeroCamisa() && escolhas != 0);
+			    		}
+		    		else{
+			    		do{
+				    		try{
+				    			System.out.println("Digite o número do jogador que "+j.getNome()+" irá tocar a bola: "+atacanteDB.getNumeroCamisa());
+				    			System.out.println("Ou digite 0 para chutar pro gol: ");
+				    			escolhas = ler.nextInt();
+				    		} catch(java.util.InputMismatchException e){
+				    			System.out.println("Você deve digitar um valor numérico que seja o "+atacanteDB.getNumeroCamisa());}
+				    			System.out.println("Ou digite 0 para chutar pro gol: ");
+				    			ler.nextLine();
+				    		} while(escolhas != atacanteDB.getNumeroCamisa() && escolhas != 0);
+			    		}
 		    		if(escolhas == atacanteDB.getNumeroCamisa()){
 		    			j = atacanteDB;
 		    		}
@@ -521,8 +727,13 @@ public class Partida {
 		    }
 		    tempo++;
 		    System.out.println(gol.placar());
+		    if(tempo <45){
 		    System.out.println(tempo+" minutos do primeiro tempo");
-	    }while(tempo < 45);
+		    }
+		    else{
+			    System.out.println(tempo+" minutos do segundo tempo");
+		    }
+	    }while(tempo < 90);
 	    
 	  }
 }
